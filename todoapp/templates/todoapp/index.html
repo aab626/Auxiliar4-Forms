@@ -28,25 +28,9 @@
                         </div>
                         <div class="card-body">
                             <!-- DE AQUÍ PARA ABAJO SE REEMPLAZA POR EL FORM -->
-                            <div class="form-group">
-                               <label for="titulo">Titulo de la tarea <span class="badge badge-secondary">Obligatorio</span></label>
-                               <input type="text" id="titulo" class="form-control" placeholder="¿Qué tienes que hacer?" name="titulo" required>
-                           </div>
-                           <div class="form-group">
-                               <label for="contenido">Contenido</label>
-                               <textarea  id="contenido" class="form-control" placeholder="¿Describe tu tarea?" name="contenido" required></textarea>
-                           </div>
-                           <div class="form-group">
-                               <label for="categoria">Categoria</label>
-                               <select id="categoria"  class="form-control" name="selector_categoria">
-                               <option class="disabled" value="">Elige una categoría</option>
-                               {% for categoria in categorias %}
-                                   <option class="" value="{{ categoria.nombre }}" name="{{ categoria.nombre }}">{{ categoria.nombre }}</option>
-                               {% endfor %}
-                               </select>
-                           </div>
+                                {{ form_tarea.as_p }}
+                                <button class="btn btn-primary" name="taskAdd" type="submit">Agregar tarea</button>
                             <!-- DE AQUÍ PARA ARRIBA SE REEMPLAZA POR EL FORM -->
-                            <button class="btn btn-primary" name="taskAdd" type="submit">Agregar tarea</button>
                         </div>
                     </div>
                 </form>
